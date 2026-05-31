@@ -40,52 +40,6 @@ type EmailTemplate = {
   blocks: BlocksMap;                // map of blockId → TemplateBlock
 };
 ```
-
-### TemplateConfig
-
-Global canvas settings that are not tied to any specific block.
-
-| Field             | Type     | Description                             |
-|-------------------|----------|-----------------------------------------|
-| `backgroundColor` | `string` | Backdrop color surrounding the canvas   |
-| `canvasColor`     | `string` | Background color of the email canvas    |
-| `maxWidth`        | `string` | Max width of the canvas (e.g. `"600px"`) |
-
-### TemplateBlock
-
-A block is a self-contained section of the email (e.g. hero, footer). Each block has a single root node and a flat map of all its descendant nodes.
-
-```ts
-type TemplateBlock = {
-  rootId: string;                      // entry node for rendering
-  nodes: { [nodeId: string]: NodeData };
-};
-```
-
-### NodeData
-
-Every element in the email — whether a container `div`, heading, image, or link — is a `NodeData` entry.
-
-```ts
-type NodeData = {
-  parentId: string | null;             // null for root nodes
-  childrens: string[];                 // ordered child node IDs
-  tagName: keyof JSX.IntrinsicElements; // HTML tag (div, p, img, a, table…)
-  style?: React.CSSProperties;         // inline styles
-  props?: Record<string, unknown>;     // extra HTML attributes (src, href, alt…)
-  content?: string;                    // text content for leaf nodes
-  editor?: { label: string; type: EditorType }; // present when the node is user-editable
-};
-```
-
-The `editor` field is the key to the editing system: if a node has an `editor`, clicking it in the preview selects it and opens the matching editor panel in the sidebar. Nodes without `editor` are structural-only and cannot be selected.
-
-### EditorType
-
-```ts
-type EditorType = "Text" | "Image" | "Container" | "ButtonLink";
-```
-
 ### Full example
 
 A minimal single-block template with a heading and an image:
@@ -140,6 +94,51 @@ Key things to notice:
 - `node-root` has `parentId: null` — it is the entry point for rendering.
 - Only `node-heading` and `node-image` have an `editor` field, so only they are selectable in the sidebar.
 - Leaf nodes (`img`, text nodes) have empty `childrens` arrays.
+
+### TemplateConfig
+
+Global canvas settings that are not tied to any specific block.
+
+| Field             | Type     | Description                             |
+|-------------------|----------|-----------------------------------------|
+| `backgroundColor` | `string` | Backdrop color surrounding the canvas   |
+| `canvasColor`     | `string` | Background color of the email canvas    |
+| `maxWidth`        | `string` | Max width of the canvas (e.g. `"600px"`) |
+
+### TemplateBlock
+
+A block is a self-contained section of the email (e.g. hero, footer). Each block has a single root node and a flat map of all its descendant nodes.
+
+```ts
+type TemplateBlock = {
+  rootId: string;                      // entry node for rendering
+  nodes: { [nodeId: string]: NodeData };
+};
+```
+
+### NodeData
+
+Every element in the email — whether a container `div`, heading, image, or link — is a `NodeData` entry.
+
+```ts
+type NodeData = {
+  parentId: string | null;             // null for root nodes
+  childrens: string[];                 // ordered child node IDs
+  tagName: keyof JSX.IntrinsicElements; // HTML tag (div, p, img, a, table…)
+  style?: React.CSSProperties;         // inline styles
+  props?: Record<string, unknown>;     // extra HTML attributes (src, href, alt…)
+  content?: string;                    // text content for leaf nodes
+  editor?: { label: string; type: EditorType }; // present when the node is user-editable
+};
+```
+
+The `editor` field is the key to the editing system: if a node has an `editor`, clicking it in the preview selects it and opens the matching editor panel in the sidebar. Nodes without `editor` are structural-only and cannot be selected.
+
+### EditorType
+
+```ts
+type EditorType = "Text" | "Image" | "Container" | "ButtonLink";
+```
 
 ### Rendering model
 
