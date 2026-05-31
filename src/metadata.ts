@@ -380,7 +380,11 @@ export const template2: EmailTemplate = {
             "paddingRight": "40px",
             "backgroundColor": "#FFFFFF",
             "textAlign": "left"
-          }
+          },
+          "editor": {
+            "label": "Brand Logo",
+            "type": "Container"
+          },
         },
         "logo-text": {
           "parentId": "logo-bar",
@@ -427,7 +431,11 @@ export const template2: EmailTemplate = {
             "paddingRight": "40px",
             "backgroundColor": "#FFFFFF",
             "textAlign": "center"
-          }
+          },
+          "editor": {
+            "label": "Container settings",
+            "type": "Container"
+          },
         },
         "hero-greeting": {
           "parentId": "hero-text-block",
@@ -522,7 +530,11 @@ export const template2: EmailTemplate = {
             "paddingRight": "40px",
             "backgroundColor": "#FFFFFF",
             "textAlign": "center"
-          }
+          },
+          "editor": {
+            "label": "Container settings",
+            "type": "Container"
+          },
         },
         "featured-image": {
           "parentId": "image-block",
@@ -578,7 +590,11 @@ export const template2: EmailTemplate = {
             "paddingRight": "40px",
             "backgroundColor": "#FFFFFF",
             "textAlign": "left"
-          }
+          },
+          "editor": {
+            "label": "Container settings",
+            "type": "Container"
+          },
         },
         "content-title": {
           "parentId": "content-block",
@@ -647,7 +663,11 @@ export const template2: EmailTemplate = {
             "fontFamily": "Georgia",
             "letterSpacing": "0px",
             "lineHeight": "0px"
-          }
+          },
+          "editor": {
+            "label": "Container settings",
+            "type": "Container"
+          },
         }
       }
     },
@@ -669,7 +689,11 @@ export const template2: EmailTemplate = {
             "paddingRight": "40px",
             "backgroundColor": "#FFFFFF",
             "textAlign": "left"
-          }
+          },
+          "editor": {
+            "label": "Container settings",
+            "type": "Container"
+          },
         },
         "benefit-1": {
           "parentId": "benefits-block",
@@ -693,7 +717,11 @@ export const template2: EmailTemplate = {
             "fontFamily": "Georgia",
             "letterSpacing": "0px",
             "lineHeight": "0px"
-          }
+          },
+          "editor": {
+            "label": "Container settings",
+            "type": "Container"
+          },
         },
         "benefit-1-number": {
           "parentId": "benefit-1",
@@ -788,7 +816,11 @@ export const template2: EmailTemplate = {
             "fontFamily": "Georgia",
             "letterSpacing": "0px",
             "lineHeight": "0px"
-          }
+          },
+          "editor": {
+            "label": "Container settings",
+            "type": "Container"
+          },
         },
         "benefit-2-number": {
           "parentId": "benefit-2",
@@ -882,7 +914,11 @@ export const template2: EmailTemplate = {
             "fontFamily": "Georgia",
             "letterSpacing": "0px",
             "lineHeight": "0px"
-          }
+          },
+          "editor": {
+            "label": "Container settings",
+            "type": "Container"
+          },
         },
         "benefit-3-number": {
           "parentId": "benefit-3",
@@ -966,7 +1002,6 @@ export const template2: EmailTemplate = {
             "footer-cta",
             "footer-divider",
             "footer-text",
-            "footer-links"
           ],
           "tagName": "div",
           "style": {
@@ -977,7 +1012,11 @@ export const template2: EmailTemplate = {
             "backgroundColor": "#FFFFFF",
             "textAlign": "center",
             "borderTop": "1px solid #EEEEEE"
-          }
+          },
+          "editor": {
+            "label": "Container settings",
+            "type": "Container"
+          },
         },
         "footer-cta": {
           "parentId": "footer-block",
@@ -985,7 +1024,7 @@ export const template2: EmailTemplate = {
           "tagName": "a",
           "editor": {
             "label": "Explore Now Button",
-            "type": "Button"
+            "type": "ButtonLink"
           },
           "props": {
             "href": "https://example.com"
@@ -1028,7 +1067,11 @@ export const template2: EmailTemplate = {
             "letterSpacing": "0px",
             "textAlign": "center",
             "lineHeight": "0px"
-          }
+          },
+          "editor": {
+            "label": "Container settings",
+            "type": "Container"
+          },
         },
         "footer-text": {
           "parentId": "footer-block",
@@ -1049,104 +1092,6 @@ export const template2: EmailTemplate = {
             "letterSpacing": "0px",
             "backgroundColor": "transparent",
             "textAlign": "center",
-            "paddingTop": "0px",
-            "paddingBottom": "0px",
-            "paddingLeft": "0px",
-            "paddingRight": "0px"
-          }
-        },
-        "footer-links": {
-          "parentId": "footer-block",
-          "childrens": [
-            "footer-link-privacy",
-            "footer-link-terms",
-            "footer-link-contact"
-          ],
-          "tagName": "div",
-          "style": {
-            "textAlign": "center",
-            "paddingTop": "20px",
-            "paddingBottom": "0px",
-            "paddingLeft": "0px",
-            "paddingRight": "0px",
-            "backgroundColor": "transparent",
-            "borderTop": "1px solid #EEEEEE",
-            "color": "transparent",
-            "fontSize": "0px",
-            "fontWeight": "normal",
-            "fontFamily": "Georgia",
-            "letterSpacing": "0px",
-            "lineHeight": "0px"
-          }
-        },
-        "footer-link-privacy": {
-          "parentId": "footer-links",
-          "childrens": [],
-          "tagName": "a",
-          "props": {
-            "href": "https://example.com/privacy"
-          },
-          "content": "Privacy",
-          "style": {
-            "color": "#999999",
-            "fontSize": "11px",
-            "fontWeight": "normal",
-            "fontFamily": "Georgia",
-            "letterSpacing": "0px",
-            "textDecoration": "none",
-            "marginRight": "20px",
-            "backgroundColor": "transparent",
-            "textAlign": "center",
-            "lineHeight": "14px",
-            "paddingTop": "0px",
-            "paddingBottom": "0px",
-            "paddingLeft": "0px",
-            "paddingRight": "0px"
-          }
-        },
-        "footer-link-terms": {
-          "parentId": "footer-links",
-          "childrens": [],
-          "tagName": "a",
-          "props": {
-            "href": "https://example.com/terms"
-          },
-          "content": "Terms",
-          "style": {
-            "color": "#999999",
-            "fontSize": "11px",
-            "fontWeight": "normal",
-            "fontFamily": "Georgia",
-            "letterSpacing": "0px",
-            "textDecoration": "none",
-            "marginRight": "20px",
-            "backgroundColor": "transparent",
-            "textAlign": "center",
-            "lineHeight": "14px",
-            "paddingTop": "0px",
-            "paddingBottom": "0px",
-            "paddingLeft": "0px",
-            "paddingRight": "0px"
-          }
-        },
-        "footer-link-contact": {
-          "parentId": "footer-links",
-          "childrens": [],
-          "tagName": "a",
-          "props": {
-            "href": "https://example.com/contact"
-          },
-          "content": "Contact",
-          "style": {
-            "color": "#999999",
-            "fontSize": "11px",
-            "fontWeight": "normal",
-            "fontFamily": "Georgia",
-            "letterSpacing": "0px",
-            "textDecoration": "none",
-            "backgroundColor": "transparent",
-            "textAlign": "center",
-            "lineHeight": "14px",
             "paddingTop": "0px",
             "paddingBottom": "0px",
             "paddingLeft": "0px",
