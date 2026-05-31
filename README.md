@@ -1,16 +1,11 @@
 # Email Template Builder
 
-A front-end engineer take-home assignment — a browser-based email template editor built with React, TypeScript, and Vite. Users pick a pre-built template, customize it visually through a sidebar, and export production-ready HTML.
-
 ## Getting Started
 
 ```bash
 yarn install
 yarn dev
 ```
-
-Open [http://localhost:5173](http://localhost:5173) to view the app.
-
 ---
 
 ## Application Structure
@@ -88,8 +83,63 @@ The `editor` field is the key to the editing system: if a node has an `editor`, 
 ### EditorType
 
 ```ts
-type EditorType = "Text" | "Image" | "Button" | "Divider" | "Spacer" | "Container" | "ButtonLink";
+type EditorType = "Text" | "Image" | "Container" | "ButtonLink";
 ```
+
+### Full example
+
+A minimal single-block template with a heading and an image:
+
+```json
+{
+  "templateId": "template1",
+  "templateName": "Simple Announcement",
+  "templateConfig": {
+    "backgroundColor": "#f4f4f4",
+    "canvasColor": "#ffffff",
+    "maxWidth": "600px"
+  },
+  "blockIds": ["block-hero"],
+  "blocks": {
+    "block-hero": {
+      "rootId": "node-root",
+      "nodes": {
+        "node-root": {
+          "parentId": null,
+          "childrens": ["node-heading", "node-image"],
+          "tagName": "div",
+          "style": { "padding": "32px 24px", "textAlign": "center" }
+        },
+        "node-heading": {
+          "parentId": "node-root",
+          "childrens": [],
+          "tagName": "h1",
+          "style": { "fontSize": "28px", "color": "#111111", "marginBottom": "16px" },
+          "content": "Welcome to Our Newsletter",
+          "editor": { "label": "Heading", "type": "Text" }
+        },
+        "node-image": {
+          "parentId": "node-root",
+          "childrens": [],
+          "tagName": "img",
+          "style": { "width": "100%", "height": "auto" },
+          "props": {
+            "src": "https://example.com/banner.jpg",
+            "alt": "Banner image"
+          },
+          "editor": { "label": "Banner", "type": "Image" }
+        }
+      }
+    }
+  }
+}
+```
+
+Key things to notice:
+- `blockIds` controls block **order**; `blocks` is an unordered map.
+- `node-root` has `parentId: null` — it is the entry point for rendering.
+- Only `node-heading` and `node-image` have an `editor` field, so only they are selectable in the sidebar.
+- Leaf nodes (`img`, text nodes) have empty `childrens` arrays.
 
 ### Rendering model
 
@@ -99,7 +149,7 @@ Blocks render as a **tree** by recursively resolving `childrens` from the flat `
 
 ## EditorContext
 
-`EditorContext` ([src/context/EditorContext.tsx](src/context/EditorContext.tsx)) is the single source of truth for all editor state. It is provided at the app root via `<EditorProvider>` and consumed with the `useEditorContext()` hook.
+`EditorContext` ([src/context/EditorContext.tsx](src/context/EditorContext.tsx)) is the single source of truth for all editor state.
 
 ### State
 
@@ -109,22 +159,18 @@ Blocks render as a **tree** by recursively resolving `childrens` from the flat `
 | `templateConfig`   | `TemplateConfig` | Global page settings                           |
 | `blockIds`         | `string[]`     | Ordered list of block IDs                        |
 | `blocks`           | `BlocksMap`    | Full node map for all blocks                     |
-| `selectedBlockId`  | `string`       | Currently selected block (empty string = none)   |
-| `selectedNodeId`   | `string`       | Currently selected node (empty string = none)    |
+| `selectedBlockId`  | `string`       | Currently selected block                         |
+| `selectedNodeId`   | `string`       | Currently selected node                          |
 
 ### Actions
 
 | Action                  | Description                                                    |
 |-------------------------|----------------------------------------------------------------|
-| `setSelection`          | Set the active `blockId` + `nodeId` (drives sidebar content)  |
+| `setSelection`          | Set the active `blockId` + `nodeId` (drives sidebar content)   |
 | `updateNode`            | Overwrite a node's data, pushing a snapshot to undo history    |
 | `updateTemplatConfig`   | Update page-level config, pushing a snapshot to undo history   |
 | `loadTemplate`          | Replace the entire editor state from an `EmailTemplate` object |
 | `undo` / `redo`         | Travel through the snapshot history (max 1000 snapshots)       |
-
-### Undo / Redo
-
-Each call to `updateNode` or `updateTemplatConfig` pushes a `Snapshot` (blocks + templateConfig + current selection) onto a `past` stack stored in a `useRef`. Undo pops from `past` onto a `future` stack; redo reverses this. Because the stacks are refs, modifying them does not trigger a re-render — only the derived `canUndo` / `canRedo` booleans are state.
 
 ---
 
@@ -133,44 +179,18 @@ Each call to `updateNode` or `updateTemplatConfig` pushes a `Snapshot` (blocks +
 **Location:** [src/components/editor-preview/](src/components/editor-preview/)
 
 The preview is a live, interactive rendering of the current template. It mirrors exactly what the exported HTML will look like.
-
-### `EditorPreview` (index.tsx)
-
-The top-level canvas component. Renders a centred `<table>` styled with `templateConfig` values (backdrop color, canvas color, max width). Iterates over `blockIds`, wrapping each `BlockRender` in an `EditableWrapper`.
-
-Clicking anywhere on the backdrop deselects the current node (sets selection to empty strings).
-
-### `EditableWrapper`
-
-A thin wrapper around each block. Adds hover shadow and border transitions so users can see block boundaries as they hover.
-
-### `BlockRender`
-
 Recursively renders a `TemplateBlock` starting from `rootId`. For each node:
-
 - Renders the correct HTML tag via `nodeData.tagName`
 - Applies `nodeData.style` as inline styles
 - Spreads `nodeData.props` (e.g. `src`, `href`, `alt`)
 - Renders `nodeData.content` as text content
-- If the node has an `editor`, adds `hover-outline` and `selected-outline` CSS classes and attaches an `onClick` handler that calls `onSelect(nodeId)`
-- Prevents default navigation for `<a>` tags so links don't redirect during editing
-
-Void elements (`img`, `br`, `hr`, etc.) are rendered as self-closing tags.
-
 ---
 
 ## Editor Sidebar
 
 **Location:** [src/components/editor-sidebar/](src/components/editor-sidebar/)
 
-The sidebar displays context-sensitive controls based on the currently selected node's `editor.type`. When nothing is selected, it shows global page settings.
-
-### `EditorSidebar` (index.tsx)
-
-Shell component. Renders a scrollable area for `SidebarRender` and a sticky `Footer` bar at the bottom.
-
-### `SidebarRender`
-
+The sidebar displays context-sensitive controls based on the currently selected node's `editor.type`.
 A `switch` on the selected node's `editor.type` that mounts the matching editor component:
 
 | `editor.type` | Component          | Editable properties                                             |
