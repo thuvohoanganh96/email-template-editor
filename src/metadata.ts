@@ -1103,4 +1103,901 @@ export const template2: EmailTemplate = {
   }
 }
 
-export const TEMPLATE_LIST = [template1, template2];
+export const template3: EmailTemplate = {
+  "templateId": "vibrant-modern-template-005",
+  "templateName": "Vibrant Modern Colorful Email",
+  "templateConfig": {
+    "backgroundColor": "#F5F5F5",
+    "canvasColor": "#FFFFFF",
+    "maxWidth": "600px"
+  },
+  "blockIds": [
+    "block-1",
+    "block-2",
+    "block-3",
+    "block-4",
+    "block-5",
+    "block-6"
+  ],
+  "blocks": {
+    "block-1": {
+      "rootId": "gradient-header",
+      "nodes": {
+        "gradient-header": {
+          "parentId": null,
+          "childrens": [
+            "header-content"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "40px",
+            "paddingBottom": "40px",
+            "paddingLeft": "30px",
+            "paddingRight": "30px",
+            "backgroundColor": "#7080C4",
+            "textAlign": "center"
+          },
+          "editor": {
+            "label": "Header Container",
+            "type": "Container"
+          }
+        },
+        "header-content": {
+          "parentId": "gradient-header",
+          "childrens": [
+            "header-subtitle",
+            "header-title"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "color": "transparent",
+            "fontSize": "0px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "lineHeight": "0px"
+          },
+          "editor": {
+            "label": "Header Content",
+            "type": "Container"
+          }
+        },
+        "header-subtitle": {
+          "parentId": "header-content",
+          "childrens": [],
+          "tagName": "p",
+          "editor": {
+            "label": "Subtitle",
+            "type": "Text"
+          },
+          "content": "EXCLUSIVE COLLECTION",
+          "style": {
+            "margin": "0 0 12px 0",
+            "color": "#FFFFFF",
+            "fontSize": "12px",
+            "fontWeight": "bold",
+            "fontFamily": "Helvetica",
+            "letterSpacing": "2px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "16px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "header-title": {
+          "parentId": "header-content",
+          "childrens": [],
+          "tagName": "h1",
+          "editor": {
+            "label": "Main Title",
+            "type": "Text"
+          },
+          "content": "Spring Collection 2024",
+          "style": {
+            "margin": "0",
+            "color": "#FFFFFF",
+            "fontSize": "38px",
+            "fontWeight": "bold",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "48px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        }
+      }
+    },
+    "block-2": {
+      "rootId": "promo-banner",
+      "nodes": {
+        "promo-banner": {
+          "parentId": null,
+          "childrens": [
+            "promo-text"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "25px",
+            "paddingBottom": "25px",
+            "paddingLeft": "30px",
+            "paddingRight": "30px",
+            "backgroundColor": "#F0A840",
+            "textAlign": "center"
+          },
+          "editor": {
+            "label": "Promo Banner",
+            "type": "Container"
+          }
+        },
+        "promo-text": {
+          "parentId": "promo-banner",
+          "childrens": [],
+          "tagName": "p",
+          "editor": {
+            "label": "Promo Message",
+            "type": "Text"
+          },
+          "content": "🎉 Get 40% OFF on everything! Use code: SPRING40",
+          "style": {
+            "margin": "0",
+            "color": "#FFFFFF",
+            "fontSize": "16px",
+            "fontWeight": "bold",
+            "fontFamily": "Helvetica",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "24px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        }
+      }
+    },
+    "block-3": {
+      "rootId": "hero-image-block",
+      "nodes": {
+        "hero-image-block": {
+          "parentId": null,
+          "childrens": [
+            "hero-image"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "0px",
+            "paddingBottom": "30px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
+            "backgroundColor": "#FFFFFF",
+            "textAlign": "center"
+          },
+          "editor": {
+            "label": "Hero Image Container",
+            "type": "Container"
+          }
+        },
+        "hero-image": {
+          "parentId": "hero-image-block",
+          "childrens": [],
+          "tagName": "img",
+          "editor": {
+            "label": "Hero Image",
+            "type": "Image"
+          },
+          "props": {
+            "src": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=300&fit=crop",
+            "alt": "Spring Collection"
+          },
+          "style": {
+            "display": "block",
+            "width": "100%",
+            "height": "300px",
+            "maxWidth": "100%",
+            "margin": "0",
+            "objectFit": "cover",
+            "border": "0",
+            "color": "transparent",
+            "fontSize": "0px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "0px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        }
+      }
+    },
+    "block-4": {
+      "rootId": "features-grid",
+      "nodes": {
+        "features-grid": {
+          "parentId": null,
+          "childrens": [
+            "grid-title",
+            "feature-card-1",
+            "feature-card-2",
+            "feature-card-3"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "40px",
+            "paddingBottom": "30px",
+            "paddingLeft": "20px",
+            "paddingRight": "20px",
+            "backgroundColor": "#FFFFFF",
+            "textAlign": "center"
+          },
+          "editor": {
+            "label": "Features Grid",
+            "type": "Container"
+          }
+        },
+        "grid-title": {
+          "parentId": "features-grid",
+          "childrens": [],
+          "tagName": "h2",
+          "editor": {
+            "label": "Grid Title",
+            "type": "Text"
+          },
+          "content": "Why Our Customers Love Us",
+          "style": {
+            "margin": "0 0 35px 0",
+            "color": "#1A1A1A",
+            "fontSize": "28px",
+            "fontWeight": "bold",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "36px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "feature-card-1": {
+          "parentId": "features-grid",
+          "childrens": [
+            "card-1-icon",
+            "card-1-title",
+            "card-1-text"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "25px",
+            "paddingBottom": "25px",
+            "paddingLeft": "25px",
+            "paddingRight": "25px",
+            "backgroundColor": "#88B4AC",
+            "textAlign": "center",
+            "marginBottom": "20px",
+            "borderRadius": "8px",
+            "color": "transparent",
+            "fontSize": "0px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "lineHeight": "0px"
+          },
+          "editor": {
+            "label": "Feature Card 1",
+            "type": "Container"
+          }
+        },
+        "card-1-icon": {
+          "parentId": "feature-card-1",
+          "childrens": [],
+          "tagName": "p",
+          "content": "✨",
+          "style": {
+            "margin": "0 0 12px 0",
+            "color": "#FFFFFF",
+            "fontSize": "32px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "36px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "card-1-title": {
+          "parentId": "feature-card-1",
+          "childrens": [],
+          "tagName": "h3",
+          "editor": {
+            "label": "Card Title",
+            "type": "Text"
+          },
+          "content": "Premium Quality",
+          "style": {
+            "margin": "0 0 8px 0",
+            "color": "#FFFFFF",
+            "fontSize": "18px",
+            "fontWeight": "bold",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "24px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "card-1-text": {
+          "parentId": "feature-card-1",
+          "childrens": [],
+          "tagName": "p",
+          "editor": {
+            "label": "Card Description",
+            "type": "Text"
+          },
+          "content": "Crafted with care and attention to detail.",
+          "style": {
+            "margin": "0",
+            "color": "#FFFFFF",
+            "fontSize": "13px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "lineHeight": "18px",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "feature-card-2": {
+          "parentId": "features-grid",
+          "childrens": [
+            "card-2-icon",
+            "card-2-title",
+            "card-2-text"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "25px",
+            "paddingBottom": "25px",
+            "paddingLeft": "25px",
+            "paddingRight": "25px",
+            "backgroundColor": "#5868B4",
+            "textAlign": "center",
+            "marginBottom": "20px",
+            "borderRadius": "8px",
+            "color": "transparent",
+            "fontSize": "0px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "lineHeight": "0px"
+          },
+          "editor": {
+            "label": "Feature Card 2",
+            "type": "Container"
+          }
+        },
+        "card-2-icon": {
+          "parentId": "feature-card-2",
+          "childrens": [],
+          "tagName": "p",
+          "content": "🚀",
+          "style": {
+            "margin": "0 0 12px 0",
+            "color": "#FFFFFF",
+            "fontSize": "32px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "36px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "card-2-title": {
+          "parentId": "feature-card-2",
+          "childrens": [],
+          "tagName": "h3",
+          "editor": {
+            "label": "Card Title",
+            "type": "Text"
+          },
+          "content": "Fast Shipping",
+          "style": {
+            "margin": "0 0 8px 0",
+            "color": "#FFFFFF",
+            "fontSize": "18px",
+            "fontWeight": "bold",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "24px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "card-2-text": {
+          "parentId": "feature-card-2",
+          "childrens": [],
+          "tagName": "p",
+          "editor": {
+            "label": "Card Description",
+            "type": "Text"
+          },
+          "content": "Delivered to your door within 48 hours.",
+          "style": {
+            "margin": "0",
+            "color": "#FFFFFF",
+            "fontSize": "13px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "lineHeight": "18px",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "feature-card-3": {
+          "parentId": "features-grid",
+          "childrens": [
+            "card-3-icon",
+            "card-3-title",
+            "card-3-text"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "25px",
+            "paddingBottom": "25px",
+            "paddingLeft": "25px",
+            "paddingRight": "25px",
+            "backgroundColor": "#D88E28",
+            "textAlign": "center",
+            "marginBottom": "0px",
+            "borderRadius": "8px",
+            "color": "transparent",
+            "fontSize": "0px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "lineHeight": "0px"
+          },
+          "editor": {
+            "label": "Feature Card 3",
+            "type": "Container"
+          }
+        },
+        "card-3-icon": {
+          "parentId": "feature-card-3",
+          "childrens": [],
+          "tagName": "p",
+          "content": "💎",
+          "style": {
+            "margin": "0 0 12px 0",
+            "color": "#FFFFFF",
+            "fontSize": "32px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "36px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "card-3-title": {
+          "parentId": "feature-card-3",
+          "childrens": [],
+          "tagName": "h3",
+          "editor": {
+            "label": "Card Title",
+            "type": "Text"
+          },
+          "content": "VIP Rewards",
+          "style": {
+            "margin": "0 0 8px 0",
+            "color": "#FFFFFF",
+            "fontSize": "18px",
+            "fontWeight": "bold",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "24px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "card-3-text": {
+          "parentId": "feature-card-3",
+          "childrens": [],
+          "tagName": "p",
+          "editor": {
+            "label": "Card Description",
+            "type": "Text"
+          },
+          "content": "Earn points on every purchase.",
+          "style": {
+            "margin": "0",
+            "color": "#FFFFFF",
+            "fontSize": "13px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "lineHeight": "18px",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        }
+      }
+    },
+    "block-5": {
+      "rootId": "cta-section",
+      "nodes": {
+        "cta-section": {
+          "parentId": null,
+          "childrens": [
+            "cta-box"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "40px",
+            "paddingBottom": "40px",
+            "paddingLeft": "30px",
+            "paddingRight": "30px",
+            "backgroundColor": "#BC3C3C",
+            "textAlign": "center"
+          },
+          "editor": {
+            "label": "CTA Section",
+            "type": "Container"
+          }
+        },
+        "cta-box": {
+          "parentId": "cta-section",
+          "childrens": [
+            "cta-heading",
+            "cta-description",
+            "cta-button"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "color": "transparent",
+            "fontSize": "0px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "lineHeight": "0px"
+          },
+          "editor": {
+            "label": "CTA Box",
+            "type": "Container"
+          }
+        },
+        "cta-heading": {
+          "parentId": "cta-box",
+          "childrens": [],
+          "tagName": "h2",
+          "editor": {
+            "label": "CTA Heading",
+            "type": "Text"
+          },
+          "content": "Don't Miss Out!",
+          "style": {
+            "margin": "0 0 15px 0",
+            "color": "#FFFFFF",
+            "fontSize": "32px",
+            "fontWeight": "bold",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "40px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "cta-description": {
+          "parentId": "cta-box",
+          "childrens": [],
+          "tagName": "p",
+          "editor": {
+            "label": "CTA Description",
+            "type": "Text"
+          },
+          "content": "Shop now and get exclusive access to our limited edition items.",
+          "style": {
+            "margin": "0 0 30px 0",
+            "color": "#FFFFFF",
+            "fontSize": "15px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "lineHeight": "24px",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "cta-button": {
+          "parentId": "cta-box",
+          "childrens": [],
+          "tagName": "a",
+          "editor": {
+            "label": "Shop Now Button",
+            "type": "ButtonLink"
+          },
+          "props": {
+            "href": "https://example.com/shop"
+          },
+          "content": "Shop Now",
+          "style": {
+            "display": "inline-block",
+            "paddingTop": "14px",
+            "paddingBottom": "14px",
+            "paddingLeft": "40px",
+            "paddingRight": "40px",
+            "backgroundColor": "#FFFFFF",
+            "color": "#BC3C3C",
+            "fontSize": "15px",
+            "fontWeight": "bold",
+            "fontFamily": "Georgia",
+            "letterSpacing": "1px",
+            "textAlign": "center",
+            "lineHeight": "20px",
+            "textDecoration": "none"
+          }
+        }
+      }
+    },
+    "block-6": {
+      "rootId": "footer-section",
+      "nodes": {
+        "footer-section": {
+          "parentId": null,
+          "childrens": [
+            "footer-content"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "40px",
+            "paddingBottom": "40px",
+            "paddingLeft": "30px",
+            "paddingRight": "30px",
+            "backgroundColor": "#333333",
+            "textAlign": "center"
+          },
+          "editor": {
+            "label": "Footer Section",
+            "type": "Container"
+          }
+        },
+        "footer-content": {
+          "parentId": "footer-section",
+          "childrens": [
+            "footer-text",
+            "footer-links"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "color": "transparent",
+            "fontSize": "0px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "lineHeight": "0px"
+          },
+          "editor": {
+            "label": "Footer Content",
+            "type": "Container"
+          }
+        },
+        "footer-text": {
+          "parentId": "footer-content",
+          "childrens": [],
+          "tagName": "p",
+          "editor": {
+            "label": "Footer Text",
+            "type": "Text"
+          },
+          "content": "© 2024 Your Brand. All rights reserved.",
+          "style": {
+            "margin": "0 0 20px 0",
+            "color": "#BBBBBB",
+            "fontSize": "11px",
+            "fontWeight": "normal",
+            "fontFamily": "Helvetica",
+            "lineHeight": "16px",
+            "letterSpacing": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          }
+        },
+        "footer-links": {
+          "parentId": "footer-content",
+          "childrens": [
+            "footer-link-1",
+            "footer-link-2",
+            "footer-link-3"
+          ],
+          "tagName": "div",
+          "style": {
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "color": "transparent",
+            "fontSize": "0px",
+            "fontWeight": "normal",
+            "fontFamily": "Georgia",
+            "letterSpacing": "0px",
+            "lineHeight": "0px"
+          },
+          "editor": {
+            "label": "Footer Links",
+            "type": "Container"
+          }
+        },
+        "footer-link-1": {
+          "parentId": "footer-links",
+          "childrens": [],
+          "tagName": "a",
+          "props": {
+            "href": "https://example.com/unsubscribe"
+          },
+          "content": "Unsubscribe",
+          "style": {
+            "color": "#999999",
+            "fontSize": "10px",
+            "fontWeight": "normal",
+            "fontFamily": "Helvetica",
+            "letterSpacing": "0px",
+            "textDecoration": "none",
+            "marginRight": "15px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "14px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          },
+          "editor": {
+            "label": "Unsubscribe Link",
+            "type": "ButtonLink"
+          }
+        },
+        "footer-link-2": {
+          "parentId": "footer-links",
+          "childrens": [],
+          "tagName": "a",
+          "props": {
+            "href": "https://example.com/privacy"
+          },
+          "content": "Privacy Policy",
+          "style": {
+            "color": "#999999",
+            "fontSize": "10px",
+            "fontWeight": "normal",
+            "fontFamily": "Helvetica",
+            "letterSpacing": "0px",
+            "textDecoration": "none",
+            "marginRight": "15px",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "14px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          },
+          "editor": {
+            "label": "Privacy Policy Link",
+            "type": "ButtonLink"
+          }
+        },
+        "footer-link-3": {
+          "parentId": "footer-links",
+          "childrens": [],
+          "tagName": "a",
+          "props": {
+            "href": "https://example.com/contact"
+          },
+          "content": "Contact Us",
+          "style": {
+            "color": "#999999",
+            "fontSize": "10px",
+            "fontWeight": "normal",
+            "fontFamily": "Helvetica",
+            "letterSpacing": "0px",
+            "textDecoration": "none",
+            "backgroundColor": "transparent",
+            "textAlign": "center",
+            "lineHeight": "14px",
+            "paddingTop": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px"
+          },
+          "editor": {
+            "label": "Contact Us Link",
+            "type": "ButtonLink"  
+          }
+        }
+      }
+    }
+  }
+}
+
+export const TEMPLATE_LIST = [template1, template2, template3];
