@@ -8,7 +8,7 @@ const FONT_SIZE_OPTIONS = [
   { value: '16', content: '16' },
   { value: '18', content: '18' },
   { value: '20', content: '20' },
-    { value: '22', content: '22' },
+  { value: '22', content: '22' },
   { value: '24', content: '24' },
   { value: '26', content: '26' },
   { value: '28', content: '28' },
