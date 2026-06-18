@@ -1,4 +1,5 @@
 import LayoutWrapper from '../components/common/LayoutWrapper';
+import Chatbot from '../components/chatbot';
 import { Box, Flex, IconChevronLeft, IconChevronRight, IconToggle } from '@flodesk/grain';
 import EditorPreview from '../components/editor-preview';
 import EditorSidebar from '../components/editor-sidebar/index.tsx';
@@ -69,6 +70,7 @@ export default function Builder() {
           </Box>
         }
       </Flex>
+      <Chatbot />
     </LayoutWrapper>
   );
 }

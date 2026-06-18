@@ -1,19 +1,8 @@
 import { useEditorContext } from '../../context/EditorContext';
 import BlockRender from './BlockRender';
 import EditableWrapper from './EditableWrapper';
-import styled from '@emotion/styled'
+import { StyledHtml } from './style';
 
-const StyledHtml = styled.div`
-.hover-outline:hover {
-    outline: 1px solid var(--grn-color-selection);
-    outline-offset: -1px;
-}
-
-.selected-outline {
-    outline: 2px solid var(--grn-color-selection);
-    outline-offset: -2px;
-}
-`
 export default function EditorPreview() {
   const { setSelection, templateConfig, blockIds, blocks, selectedNodeId } = useEditorContext();
 

@@ -1,13 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Box, Flex, Text } from '@flodesk/grain';
-import styled from '@emotion/styled'
-
-const CenterComponent = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-`;
+import { CenterComponent } from './style';
 
 export default function Header() {
   const { pathname } = useLocation();
